@@ -1,38 +1,425 @@
-.App {
-  text-align: center;
+*{
+  /* border: 2px solid red; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  user-select: none;
+  background: linear-gradient(to left, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.container{
   min-height: 100vh;
+  display: flex;
+  flex-direction: column ;
+  gap: 17rem;
+}
+
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.App .scoreBoard{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 30rem;
+  height: 6rem;
+  border: 3px solid hsl(217, 16%, 45%);
+  border-radius: 10px;
+  padding: 5px 15px;
+}
+
+.App .scoreBoard.smallScreen{
+  width: 18rem;
+}
+
+.App .scoreBoard.smallerScreen{
+  width: 13rem;
+}
+
+.App .scoreBoard img{
+  max-width: 5rem;
+}
+
+.App .scoreBox{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: #ffffff;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 8px;
+  box-shadow: 1px 1px 1px 0px #000;
 }
 
-.App-link {
-  color: #61dafb;
+.App .scoreBox .title{
+  color: hsl(229, 64%, 46%);
+  font-size: 10px;
+  letter-spacing: 1px;
+  font-weight: 700;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App .scoreBox .score{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: hsl(229, 25%, 31%);
+  font-size: 30px;
+  font-weight: 700;
+  width: 73px;
+}
+
+.App .rulesBtn{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid hsl(217, 16%, 45%);
+  border-radius: 10px;
+  background: transparent;
+  width: 5rem;
+  height: 2rem;
+}
+
+.App .resetBtn{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid hsl(217, 16%, 45%);
+  border-radius: 10px;
+  background: transparent;
+  width: 5rem;
+  height: 2rem;
+}
+
+.App .rulesBtn:hover{
+  background-color: hsl(214, 31%, 42%);
+}
+
+.App .resetBtn:hover{
+  background-color: hsl(214, 31%, 42%);
+}
+
+.App .rulesBtn p{
+  color: #ffffff;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.App .resetBtn p{
+  color: #ffffff;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.App .rulesBtn.bigScreen{
+  right: 30px;
+  bottom: 90px;
+}
+
+.App .resetBtn.bigScreen{
+  right: 30px;
+  bottom: 140px;
+}
+
+.App .rulesBtn.smallScreen{
+  bottom: 90px;
+}
+
+.App .resetBtn.smallScreen{
+  bottom: 140px;
+}
+
+.App .select{
+  margin-top: 7rem;
+  position: relative;
+}
+
+.App .select img{
+  max-width: 15rem;
+}
+
+.App .select .iconImg{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 4rem;
+  height: 4rem;
+}
+
+.App .select .iconImg img{
+  width: 35px;
+}
+
+.App .select .iconImg.scissors{
+  top: -3rem;
+  left: 5rem;
+  border: 5px solid ;
+  border-radius: 50%;
+
+  border: double 1em transparent;
+  border-radius: 50%;
+  background-image: linear-gradient(white, white), 
+                    linear-gradient(to bottom, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  background-origin: border-box;
+  box-shadow: 0px 5px 0px 0px hsl(39, 92%, 35%), inset 0px 5px 0px 0px hsl(39, 92%, 35%);
+  background-clip: content-box, border-box;
+}
+
+.App .select .iconImg.paper{
+  top: 2rem;
+  left: 12rem;
+  border: 5px solid ;
+  border-radius: 50%;
+  border: double 1em transparent;
+  border-radius: 50%;
+  background-image: linear-gradient(white, white), 
+  linear-gradient(to bottom, hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+  background-origin: border-box;
+  box-shadow: 0px 5px 0px 0px hsl(230, 97%, 24%), inset 0px 5px 0px 0px hsl(230, 97%, 24%);
+  background-clip: content-box, border-box;
+}
+
+.App .select .iconImg.rock{
+  top: 11rem;
+  left: 9rem;
+  border: 5px solid ;
+  border-radius: 50%;
+  border: double 1em transparent;
+  border-radius: 50%;
+  background-image: linear-gradient(white, white), 
+  linear-gradient(to bottom, hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+  background-origin: border-box;
+  box-shadow: 0px 5px 0px 0px hsl(230, 97%, 24%), inset 0px 5px 0px 0px hsl(230, 97%, 24%);
+  background-clip: content-box, border-box;
+}
+
+.App .select .iconImg.lizard{
+  top: 11rem;
+  left: 0rem;
+  border: 5px solid ;
+  border-radius: 50%;
+  border: double 1em transparent;
+  border-radius: 50%;
+  background-image: linear-gradient(white, white), 
+  linear-gradient(to bottom, hsl(230, 89%, 62%), hsl(261, 72%, 63%));
+  background-origin: border-box;
+  box-shadow: 0px 5px 0px 0px hsl(230, 97%, 24%), inset 0px 5px 0px 0px hsl(230, 97%, 24%);
+  background-clip: content-box, border-box;
+}
+
+.App .select .iconImg.spock{
+  top: 2rem;
+  left: -2rem;
+  border: 5px solid ;
+  border-radius: 50%;
+  border: double 1em transparent;
+  border-radius: 50%;
+  background-image: linear-gradient(white, white), 
+  linear-gradient(to bottom, hsl(189, 59%, 53%), hsl(189, 58%, 57%));
+  background-origin: border-box;
+  box-shadow: 0px 5px 0px 0px hsl(230, 97%, 24%), inset 0px 5px 0px 0px hsl(230, 97%, 24%);
+  background-clip: content-box, border-box;
+}
+
+.App .modal{
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+.App .modal .rulesCard{
+  display: grid;
+  background-color: white;
+}
+
+.App .modal .rulesCard.bigScreen{
+  width: 19rem;
+  height: 22rem;
+  border-radius: 9px;
+  grid-template-columns: 240px .4fr ;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 15px ;
+}
+
+.App .modal .rulesCard.smallScreen{
+  width: 100%;
+  height: 100%;
+  grid-template-rows: .4fr .1fr ;
+  justify-content: center;
+  align-items: center;
+}
+
+.App .modal .rulesCard h1{
+  color: hsl(229, 25%, 31%);
+  font-size: 25px;
+}
+
+.App .modal .rulesCard h1.smallScreen{
+  margin: auto;
+}
+
+.App .modal .rulesCard img.bigScreen{
+  cursor: pointer;
+}
+
+.App .modal .rulesCard img.smallScreen{
+  cursor: pointer;
+  position: absolute;
+  bottom: 3rem;
+  left: 11rem;
+}
+
+.App .modal .rulesCard img.rulesImage{
+  width: 17rem;
+}
+
+.App .status{
+  display: grid;
+  grid-template-columns: 1.2fr .8fr 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+  position: relative;
+}
+
+.App .status.tabletScreen{
+  grid-template-columns: 1fr 1fr;
+
+}
+
+.App .status .playerTag, .App .status .mouseTag{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3px;
+  align-items: center;
+  gap: 5px;
+}
+
+.App .status .playerTag h3, .App .status .mouseTag h3{
+  color: #ffffff;
+  font-weight: 100;
+  font-size: 13px;
+  letter-spacing: .1em;
+  max-width: 19rem;
+}
+
+.App .status .playerTag .personChoice, .App .status .mouseTag .mouseChoice{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6rem;
+  height: 6rem;
+  border: 5px solid ;
+  border-radius: 50%;
+  border: double 1em transparent;
+  border-radius: 50%;
+  background-clip: content-box, border-box;
+}
+
+.App .status .playerTag .personChoice.scissors, .App .status .mouseTag .mouseChoice.scissors{
+  background-image: linear-gradient(white, white), 
+  linear-gradient(to bottom, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  background-origin: border-box;
+  box-shadow: 0px 5px 0px 0px hsl(39, 92%, 35%), inset 0px 5px 0px 0px hsl(39, 92%, 35%);
+}
+
+.App .status .playerTag .personChoice.rock, .App .status .mouseTag .mouseChoice.rock{
+  background-image: linear-gradient(white, white), 
+  linear-gradient(to bottom, hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+  background-origin: border-box;
+  box-shadow: 0px 5px 0px 0px hsl(230, 97%, 24%), inset 0px 5px 0px 0px hsl(230, 97%, 24%);
+}
+
+.App .status .playerTag .personChoice.paper, .App .status .mouseTag .mouseChoice.paper{
+  background-image: linear-gradient(white, white), 
+  linear-gradient(to bottom, hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+  background-origin: border-box;
+  box-shadow: 0px 5px 0px 0px hsl(230, 97%, 24%), inset 0px 5px 0px 0px hsl(230, 97%, 24%);
+}
+
+.App .status .playerTag .personChoice.lizard, .App .status .mouseTag .mouseChoice.lizard{
+  background-image: linear-gradient(white, white), 
+  linear-gradient(to bottom, hsl(230, 89%, 62%), hsl(261, 72%, 63%));
+  background-origin: border-box;
+  box-shadow: 0px 5px 0px 0px hsl(230, 97%, 24%), inset 0px 5px 0px 0px hsl(230, 97%, 24%);
+}
+
+.App .status .playerTag .personChoice.spock, .App .status .mouseTag .mouseChoice.spock{
+  background-image: linear-gradient(white, white), 
+  linear-gradient(to bottom, hsl(189, 59%, 53%), hsl(189, 58%, 57%));
+  background-origin: border-box;
+  box-shadow: 0px 5px 0px 0px hsl(230, 97%, 24%), inset 0px 5px 0px 0px hsl(230, 97%, 24%);
+}
+
+.App .status .playerTag .personChoice img, .App .status .mouseTag .mouseChoice img{
+  width: 50px;
+}
+
+.App .status .result.tabletScreen{
+  position: absolute;
+  top: 10rem;
+  left: 6rem;
+}
+
+.App .status .result{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  visibility: hidden;
+}
+
+.App .status .result.show{
+  visibility: visible;
+}
+
+.App .status .result h3{
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.App .status .result div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 5px;
+  width: 8rem;
+  height: 2rem;
+  margin-top: -24px;
+  cursor: pointer;
+}
+
+.App .status .result div:active{
+  box-shadow: inset 1px 1px 3px 2px black;
+}
+
+.App .status .result div p{
+  color: hsl(229, 25%, 31%);
+  font-size: 14px;
+  letter-spacing: .1em;
+}
+
+.App .status .result div p:active{
+  color: red;
 }
