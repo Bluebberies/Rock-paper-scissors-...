@@ -27,15 +27,15 @@ Users should be able to:
 
 ### Screenshot
 
-![screenshot](../src/images/shot1.png)
-![screenshot](../src/images/shot2.png)
-![screenshot](../src/images/shot3.png)
-![screenshot](../src/images/shot4.png)
+![screenshot](./shot1.png)
+![screenshot](./shot2.png)
+![screenshot](./shot3.png)
+![screenshot](./shot4.png)
 
 ### Links
 
 - Solution URL: (https://github.com/Bluebberies/Rock-paper-scissors-...)
-- Live Site URL: [Add live site URL here](https://frontendrockpaperscissors.netlify.app/)
+- Live Site URL: (https://frontendrockpaperscissors.netlify.app/)
 
 ## My process
 
