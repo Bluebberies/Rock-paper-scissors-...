@@ -27,10 +27,10 @@ Users should be able to:
 
 ### Screenshot
 
-(../src/images/shot1.png)
-(../src/images/shot2.png)
-(../src/images/shot3.png)
-(../src/images/shot4.png)
+![screenshot](../src/images/shot1.png)
+![screenshot](../src/images/shot2.png)
+![screenshot](../src/images/shot3.png)
+![screenshot](../src/images/shot4.png)
 
 ### Links
 
